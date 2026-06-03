@@ -1,6 +1,6 @@
 template-file-path: ./templates/auto-scaling-web-tier.yaml
-stack-name: vpc-cloudformation-stack
+stack-name: auto-scaling-cloudformation-stack
 parameters: {}
 tags:
-  Project: vpc-cloudformation-lab
+  Project: auto-scaling-lab
   ManagedBy: GitSync
