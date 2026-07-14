@@ -274,6 +274,8 @@ Resources:
         MetadataOptions:
           HttpEndpoint: enabled
           HttpTokens: required
+        Monitoring:
+          Enabled: true
         SecurityGroupIds:
           - !Ref NoIngressSecurityGroup
         TagSpecifications:
@@ -339,9 +341,9 @@ Resources:
             #!/bin/bash
             echo "Content-Type: text/plain"
             echo
-            echo "Starting CPU stress workload for 180 seconds on $(hostname)."
+            echo "Starting CPU stress workload for 600 seconds on $(hostname)."
             for i in 1 2; do
-              timeout 180 bash -c 'while true; do :; done' >/dev/null 2>&1 &
+              timeout 600 bash -c 'while true; do :; done' >/dev/null 2>&1 &
             done
             echo "Refresh the ALB page and watch the ASG average CPU metric and target group registrations."
             STRESS
